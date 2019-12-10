@@ -10,9 +10,6 @@ class Config(object):
 
     SERVICE_NAME = 'flask_api_service'
 
-    # Data base configuration
-    MONGODB_URI = 'mongodb://localhost:27017'
-
     # Basic authentication
     USERNAME = "test"
     PASSWORD = "1eBf&3x8"
