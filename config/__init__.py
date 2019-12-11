@@ -8,6 +8,7 @@ class Config(object):
     TESTING = False
     JSONIFY_PRETTYPRINT_REGULAR = False
 
+    BASE_URL = ''
     SERVICE_NAME = 'flask_api_service'
 
     # Basic authentication

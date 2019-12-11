@@ -25,7 +25,7 @@ def test_resource_not_found(client):
 
 
 def test_method_not_allowed(client):
-    response, data = client.put('/api/v1/tests')
+    response, data = client.put('/tests')
 
     assert response.status_code == _StatusCode.NOT_ALLOWED
     assert data.get('status') == _ErrorStatus.NOT_ALLOWED
