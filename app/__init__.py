@@ -25,8 +25,8 @@ def create_app(config_name):
     from .api_v1 import api as api_blueprint
     from .api_v2 import api as api_blueprint2
 
-    app.register_blueprint(api_blueprint, url_prefix='/api/v1')
-    app.register_blueprint(api_blueprint2, url_prefix='/api/v2')
+    app.register_blueprint(api_blueprint, url_prefix=f"{app.config['BASE_URL']}/api/v1")
+    app.register_blueprint(api_blueprint2, url_prefix=f"{app.config['BASE_URL']}/api/v2")
 
     # Hello endpoint
     @app.route('/hello', methods=['GET'])

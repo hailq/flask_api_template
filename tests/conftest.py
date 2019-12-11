@@ -108,7 +108,7 @@ def app():
 
 @pytest.fixture
 def client(app):
-    return AppTestClient(app, app.config['USERNAME'], app.config['PASSWORD'])
+    return AppTestClient(app, app.config['BASE_URL'], app.config['USERNAME'], app.config['PASSWORD'])
 
 
 @pytest.fixture

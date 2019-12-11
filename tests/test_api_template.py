@@ -4,7 +4,7 @@ from app.commons.exceptions import _StatusCode, _ErrorStatus, ErrorMessage
 
 
 def test_response_format(client):
-    response, data = client.get('/api/v1/tests')
+    response, data = client.get('/tests')
 
     assert data.get('status') is not None
     assert data.get('message') is not None
@@ -14,7 +14,7 @@ def test_response_format(client):
 
 
 def test_no_post_data(client):
-    response, data = client.post('/api/v1/tests')
+    response, data = client.post('/tests')
 
     assert response.status_code == _StatusCode.BAD_REQUEST
     assert data.get('status') == _ErrorStatus.FAILURE
@@ -26,7 +26,7 @@ def test_no_required_params(client):
         'test1': 'test',
     }
 
-    response, data = client.post('/api/v1/tests', data=payload)
+    response, data = client.post('/tests', data=payload)
 
     assert response.status_code == _StatusCode.BAD_REQUEST
     assert data.get('status') == _ErrorStatus.FAILURE
@@ -39,7 +39,7 @@ def test_empty_required_params(client):
         'test2': ''
     }
 
-    response, data = client.post('/api/v1/tests', data=payload)
+    response, data = client.post('/tests', data=payload)
 
     assert response.status_code == _StatusCode.BAD_REQUEST
     assert data.get('status') == _ErrorStatus.FAILURE
