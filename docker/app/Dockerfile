@@ -9,7 +9,7 @@ RUN pip3 install -r requirements/docker.txt
 
 COPY ./app /var/www/app
 COPY ./config /var/www/config
-COPY manage.py boot.sh /var/www/
+COPY manage.py wsgi.py boot.sh /var/www/
 
 # run time configuration
 EXPOSE 5000
